@@ -1,19 +1,44 @@
 package com.luismiguel;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        CharCreated charCreated = new CharCreated();
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.println("Personagem");
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        System.out.println("Nome: ");
+        String charName = scanner.nextLine();
+
+        System.out.println("Raça: ");
+        String race = scanner.nextLine();
+
+        System.out.println("Idade: ");
+        int age = scanner.nextInt();
+
+        System.out.println("Tendência: ");
+        String tendency = scanner.nextLine();
+
+        System.out.println("Antecedente: ");
+        String background = scanner.nextLine();
+
+        scanner.nextLine();
+
+        Character character = new Character(charName, race, age, tendency, background);
+        charCreated.registerChar(character);
+
+        System.out.println("\nEventos Cadastrados");
+        for (Character c : charCreated.consultChar()) {
+            System.out.printf("Nome: " + character.getCharName());
+            System.out.printf("\nEndereço: " + character.getRace());
+            System.out.printf("\nCategoria: " + character.getAge());
+            System.out.printf("\nHorário: " + character.getTendency());
+            System.out.printf("\nDescrição: " + character.getBackground());
         }
+
+        scanner.close();
+
     }
 }

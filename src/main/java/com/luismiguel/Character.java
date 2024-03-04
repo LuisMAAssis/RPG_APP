@@ -8,12 +8,12 @@ public class Character {
     public String race;
     public String background;
 
-    public Character(String charName, String tendency, String race, String background, int age) {
+    public Character(String charName, String race, int age, String tendency, String background) {
         this.charName = charName;
-        this.tendency = tendency;
         this.race = race;
-        this.background = background;
         this.age = age;
+        this.tendency = tendency;
+        this.background = background;
     }
 
     public String getCharName() {
